@@ -3,6 +3,7 @@ var cheerio = require('cheerio');
 
 var htmlFile = "";
 
+// Initializing basic html tags and styles
 htmlFile+="<html>";
 htmlFile+="<head>";
 htmlFile+="<style>";
@@ -19,6 +20,7 @@ var date = 2013; // beginning date (works only from 2013 and above)
 var dateMax = 2016; // ending date
 
 function recup(date){
+	// requesting the url from wikipedia 
 	request('https://fr.wikipedia.org/wiki/'+date+'_au_cin%C3%A9ma', function (error, response, html) {
   if (!error && response.statusCode == 200) {
     var content = cheerio.load(html);
